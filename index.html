@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Cumpleaños</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: cursive;
+        }
+        #libro {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin: 100px auto;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+        #imagenSnoopy, #carta {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #imagenSnoopy {
+            position: relative;
+        }
+        #imagenSnoopy img {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+        }
+        #titulo {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(90deg, yellow, blue);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #cuadranteDR {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 50%;
+            cursor: pointer;
+        }
+        #carta {
+            background-color: white;
+            margin: 40px auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            font-size: 18px;
+            color: black;
+            font-style: italic;
+        }
+        #regresar {
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            display: inline-block;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audioFondo" loop>
+        <source src="Cum esme.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+    <div id="libro" onclick="abrirLibro()">Haz click para abrirme</div>
+    <div id="contenidoLibro" style="display:none;">
+        <div id="titulo">!!!!Feliz cumpleaños!!!!</div>
+        <div id="imagenSnoopy">
+            <img src="snoopy.png" alt="Snoopy con flor">
+            <div id="cuadranteDR" onclick="mostrarCarta()"></div>
+        </div>
+        <div id="carta">
+            <p>¡¡¡¡¡¡¡FELIZ CUMPLEAÑOS, MI AMORCITO PRECIOSO!!!!!!!<br><br>Esta es una cartita pequeña, pero la escribí con mucho amor :3<br><br>Hace 17 años nació la persona más linda del mundo: aquella niña que se convirtió en la mujer fuerte y amorosa que eres hoy.<br><br>Las mismas razones por las que te amo son las que me hacen estar orgulloso de ti. A pesar de las dificultades, siempre las enfrentas sin importar lo que pase. Eres una persona que defiende sus ideales, que lucha por lo que cree correcto, y aunque el mundo no siempre sea color de rosa, tú eres la flor que crece en medio de la oscuridad.<br><br>Sigue luchando por tus metas. Yo estaré a tu lado, apoyándote y animando a mi niña hermosa.<br><br>Disfruta este día, amor. Te amo mucho <3</p>
+            <div id="regresar" onclick="volverImagen()">🔙 Regresar</div>
+        </div>
+    </div>
+    <script>
+        function abrirLibro() {
+            document.getElementById('libro').style.display = 'none';
+            document.getElementById('contenidoLibro').style.display = 'block';
+            document.getElementById('imagenSnoopy').style.display = 'block';
+            document.getElementById('audioFondo').play();
+        }
+        function mostrarCarta() {
+            document.getElementById('imagenSnoopy').style.display = 'none';
+            document.getElementById('carta').style.display = 'block';
+        }
+        function volverImagen() {
+            document.getElementById('carta').style.display = 'none';
+            document.getElementById('imagenSnoopy').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
